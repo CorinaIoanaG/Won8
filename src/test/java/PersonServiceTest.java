@@ -6,6 +6,8 @@ import java.util.Set;
 
 public class PersonServiceTest {
 
+    int personsSize = 3;
+
     @Test
     public void listAllPersonsNamesValid() {
         //given
@@ -15,7 +17,7 @@ public class PersonServiceTest {
         List<String> result = personService.listAllPersonsNames();
 
         //then
-        Assertions.assertEquals(result.size(), 3);
+        Assertions.assertEquals(result.size(), personsSize);
         Assertions.assertEquals(result.get(0), "Ioana Chirila");
     }
 
@@ -68,7 +70,7 @@ public class PersonServiceTest {
         List<String> result = personService.listFirstNamesCapitalized();
 
         //then
-        Assertions.assertEquals(result.size(), 3);
+        Assertions.assertEquals(result.size(), personsSize);
         Assertions.assertEquals(result.get(0), "IOANA");
     }
 
@@ -81,7 +83,7 @@ public class PersonServiceTest {
         List<String> result = personService.listAllPersonsNamesModified();
 
         //then
-        Assertions.assertEquals(result.size(), 3);
+        Assertions.assertEquals(result.size(), personsSize);
         Assertions.assertEquals(result.get(0), "Ioana C.");
     }
 
@@ -132,6 +134,7 @@ public class PersonServiceTest {
         List<Person> result = personService.sortPersonsFirstName();
 
         //then
+        Assertions.assertEquals(result.size(), personsSize);
         Assertions.assertEquals(result.get(0), new Person("Andrei", "Pop", 34, "Oradea"));
     }
 
@@ -144,6 +147,7 @@ public class PersonServiceTest {
         List<Person> result = personService.sortPersonsLastName();
 
         //then
+        Assertions.assertEquals(result.size(), personsSize);
         Assertions.assertEquals(result.get(0), new Person("Ioana", "Chirila", 17, "Cluj"));
     }
 
@@ -156,6 +160,7 @@ public class PersonServiceTest {
         List<Person> result = personService.sortPersonsMultiple();
 
         //then
+        Assertions.assertEquals(result.size(), personsSize);
         Assertions.assertEquals(result.get(0), new Person("Andrei", "Pop", 34, "Oradea"));
     }
 
